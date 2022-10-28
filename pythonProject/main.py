@@ -30,6 +30,7 @@ def onMouse(event, x, y, flags, param):
 #         cv2.destroyAllWindows()
 def chooseColor():
     global last, img_color
+
     cv2.namedWindow('img_color')
     cv2.setMouseCallback('img_color', colorClick)
 
@@ -87,6 +88,7 @@ while True:
     elif key == ord('a'):
         cv2.destroyWindow('img_color')
     elif key == ord('v'):
+        cv2.imwrite("result/colored.png", img)
         cv2.destroyAllWindows()
         break
 
