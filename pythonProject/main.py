@@ -36,13 +36,13 @@ def chooseColor():
     img_color = cv2.imread('images/spring.png')
     cv2.imshow('img_color', img_color)
     key = cv2.waitKey(0)&0xFF # 이거 안 하면 에러뜸
-    if key == ord('a'):
-        cv2.destroyWindow('img_color')
+
     #cv2.destroyWindow('img_color')
     a = []
     for i in range(0, 3):
         a.append(last[i].item())
     return tuple(a)
+
 
 
 img = cv2.imread('images/Chill.png')
@@ -80,11 +80,15 @@ cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse)
 key = cv2.waitKey(0) & 0xFF
 while True:
+    key = cv2.waitKey(0) & 0xFF
+
     if key==ord('c'):
         newVal = chooseColor()
-    elif key==ord('v'):
+    elif key == ord('a'):
+        cv2.destroyWindow('img_color')
+    else:
         cv2.destroyAllWindows()
-        break
+
 # cv2.destroyAllWindows()
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
