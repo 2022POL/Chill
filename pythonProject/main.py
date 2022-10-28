@@ -78,7 +78,7 @@ loDiff, upDiff = (10,10,10), (10,10,10)
 # 화면 출력
 cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse)
-key = cv2.waitKey(0) & 0xFF
+
 while True:
     key = cv2.waitKey(0) & 0xFF
 
@@ -86,8 +86,9 @@ while True:
         newVal = chooseColor()
     elif key == ord('a'):
         cv2.destroyWindow('img_color')
-    else:
+    elif key == ord('v'):
         cv2.destroyAllWindows()
+        break
 
 # cv2.destroyAllWindows()
 # cv2.waitKey(0)
