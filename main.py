@@ -23,3 +23,5 @@ for file in file_list:
 
     shutil.copyfile("images/yumi.jpg", "Original/" + str(cnt) + extns)
     cnt += 1
+
+    print(cnt)
