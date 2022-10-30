@@ -18,6 +18,7 @@ for file in file_list:
     out = canny.copy()
     out = 255 - out  # canny 알고리즘 돌린 이미지 흑백반전
     # cv2.imshow("flip", cv2.resize(out,None, None, 2, 2, interpolation=cv2.INTER_AREA))
+
     cv2.imwrite("Edge/" + str(cnt) + extns, out)
 
     shutil.copyfile("images/yumi.jpg", "Original/" + str(cnt) + extns)
