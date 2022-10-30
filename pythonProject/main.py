@@ -81,7 +81,7 @@ cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse)
 
 while True:
-    key = cv2.waitKey(0) & 0xFF
+    key = cv2.waitKey(0)
 
     if key==ord('c'):
         newVal = chooseColor()
