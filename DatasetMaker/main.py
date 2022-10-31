@@ -3,7 +3,6 @@ import cv2
 
 path_dir = "images"
 file_list = os.listdir(path_dir)  # images 폴더 내 파일 이름 읽어오기
-print(file_list)
 cnt = 1
 
 for file in file_list:
