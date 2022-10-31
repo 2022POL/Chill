@@ -42,20 +42,21 @@ driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1
 # 스크롤
 # =============================================================================
 print(keyword + ' 스크롤 중 .............')
-scroll_num = int(input('스크롤 몇번할지 : '))
-
 elem = driver.find_element(By.TAG_NAME, "body")
-for i in range(scroll_num):
+
+for i in range(60):
     elem.send_keys(Keys.PAGE_DOWN)
     time.sleep(0.1)
 
 try:
-    driver.find_element(By.XPATH, '//*[@id="islmp"]/div/div/div/div[1]/div[4]/div[2]/input').click()
-    for i in range(scroll_num):
+    driver.find_element(By.XPATH, '//*[@id="islmp"]/div/div/div/div[1]/div[2]/div[2]/input').click()
+    time.sleep(2)
+    for i in range(60):
         elem.send_keys(Keys.PAGE_DOWN)
         time.sleep(0.1)
 except:
     pass
+
 
 # =============================================================================
 # 이미지 개수
