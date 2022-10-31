@@ -21,5 +21,5 @@ for file in file_list:
 
     cv2.imwrite("Edge/" + str(cnt) + extns, out)
 
-    shutil.copyfile("images/yumi.jpg", "Original/" + str(cnt) + extns)
+    shutil.copyfile("images/"+str(file), "Original/" + str(cnt) + extns)
     cnt += 1

@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from urllib.parse import quote_plus
 import time
 import os
 import urllib.request
@@ -24,6 +25,13 @@ driver.implicitly_wait(3)
 # =============================================================================
 print(keyword, '검색')
 driver.get('https://www.google.co.kr/imghp?hl=ko')
+
+# base_url = 'https://search.naver.com/search.naver?where=image&section=image&query='
+# end_url = '&res_fr=0&res_to=0&sm=tab_opt&color=&ccl=2' \
+#               '&nso=so%3Ar%2Ca%3Aall%2Cp%3Aall&recent=0&datetype=0&startdate=0&enddate=0&gif=0&optStr=&nso_open=1'
+# url = base_url + quote_plus(keyword) + end_url
+#
+# driver.get(url)
 
 Keyword = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")
 Keyword.send_keys(keyword)
