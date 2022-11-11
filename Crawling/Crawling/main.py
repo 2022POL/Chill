@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from urllib.parse import quote_plus
@@ -17,6 +19,8 @@ def createFolder(directory):
 keyword = input('검색어를 입력하세요 : ')
 createFolder('./' + keyword + '_img_download')
 
+# chrome_options = webdriver.ChromeOptions()
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 driver = webdriver.Chrome()
 driver.implicitly_wait(3)
 
