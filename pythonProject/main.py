@@ -34,7 +34,7 @@ def chooseColor():
     cv2.namedWindow('img_color')
     cv2.setMouseCallback('img_color', colorClick)
 
-    img_color = cv2.imread('images/spring.png')
+    img_color = cv2.imread('pallette/fall.jpg')
     cv2.imshow('img_color', img_color)
     key = cv2.waitKey(0)&0xFF # 이거 안 하면 에러뜸
 
@@ -44,10 +44,8 @@ def chooseColor():
         a.append(last[i].item())
     return tuple(a)
 
-
-
-img = cv2.imread('images/Chill.png')
-image_gray = cv2.imread('images/Chill.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('Sketch/flower3.jpg')
+image_gray = cv2.imread('Sketch/flower3.jpg', cv2.IMREAD_GRAYSCALE)
 
 b,g,r = cv2.split(img)
 image2 = cv2.merge([r,g,b])
@@ -76,7 +74,9 @@ mask = np.zeros((rows+2, cols+2), np.uint8)
 # 최소 최대 차이 값 ---③
 loDiff, upDiff = (10,10,10), (10,10,10)
 
+
 # 화면 출력
+cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse)
 

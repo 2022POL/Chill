@@ -2,13 +2,13 @@ import shutil, os
 import cv2
 
 path_dir = "images"
-file_list = os.listdir(path_dir)  # images 폴더 내 파일 이름 읽어오기
+file_list = os.listdir(path_dir)  # Sketch 폴더 내 파일 이름 읽어오기
 cnt = 1
 
 for file in file_list:
     extns = file[-4:]  # 이미지 파일 확장자 자르기
 
-    src = cv2.imread("images/"+str(file), cv2.IMREAD_COLOR)  # 원본 데이터
+    src = cv2.imread("Sketch/"+str(file), cv2.IMREAD_COLOR)  # 원본 데이터
     height, width = src.shape[:2]
     gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 
@@ -20,5 +20,5 @@ for file in file_list:
 
     cv2.imwrite("Edge/" + str(cnt) + extns, out)
 
-    shutil.copyfile("images/"+str(file), "Original/" + str(cnt) + extns)
+    shutil.copyfile("Sketch/"+str(file), "Original/" + str(cnt) + extns)
     cnt += 1
