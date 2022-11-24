@@ -53,9 +53,9 @@ def chooseColor(pal):
 
 
 sketch = input()
-if sketch == ('1' or 'bus' or 'flower3' or 'pengsoo' or 'turtle'):
+if sketch == '1' or sketch == 'bus' or sketch == 'flower3' or sketch == 'pengsoo' or sketch == 'turtle':
     ext = '.jpg'
-elif sketch == 'Chill' or 'flower' or 'flower2' or 'pikachu' or 'pikachu2':
+elif sketch == 'Chill' or sketch == 'flower' or sketch == 'flower2' or sketch == 'pikachu' or sketch == 'pikachu2':
     ext = '.png'
 
 img = cv2.imread('Sketch/' + sketch + ext)
