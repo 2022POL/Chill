@@ -14,6 +14,10 @@ def colorClick(event, x, y, flags, param):
 
           one_pixel = np.uint8(color)
           last = one_pixel
+      # else:
+      #     color = img_color[0,0]
+      #     one_pixel = np.unit8(color)
+      #     last = one_pixel
 
 
 # 마우스 이벤트 처리 함수
@@ -49,12 +53,13 @@ def chooseColor(pal):
 
 
 sketch = input()
-if input == '1' or 'bus' or 'flower3' or 'pengsoo' or 'turtle':
-    ext = 'jpg'
-elif input == 'Chill' or 'flower' or 'flower2' or 'pikachu' or 'pikachu2':
-    ext = 'png'
-img = cv2.imread('Sketch/'+sketch + '.' + ext)
-image_gray = cv2.imread('Sketch/'+sketch + '.' + ext, cv2.IMREAD_GRAYSCALE)
+if sketch == ('1' or 'bus' or 'flower3' or 'pengsoo' or 'turtle'):
+    ext = '.jpg'
+elif sketch == 'Chill' or 'flower' or 'flower2' or 'pikachu' or 'pikachu2':
+    ext = '.png'
+
+img = cv2.imread('Sketch/' + sketch + ext)
+image_gray = cv2.imread('Sketch/' + sketch + ext, cv2.IMREAD_GRAYSCALE)
 
 b, g, r = cv2.split(img)
 image2 = cv2.merge([r, g, b])
