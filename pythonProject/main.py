@@ -20,7 +20,7 @@ def colorClick(event, x, y, flags, param):
 def onMouse(event, x, y, flags, param):
     global mask, img
     if event == cv2.EVENT_LBUTTONDOWN:
-        seed = (x,y)
+        seed = (x, y)
         # 색 채우기 적용 ---④
         retval = cv2.floodFill(img, mask, seed, newVal, loDiff, upDiff)
         # 채우기 변경 결과 표시 ---⑤
@@ -48,8 +48,8 @@ def chooseColor(pal):
     return tuple(a)
 
 
-img = cv2.imread('Sketch/dori.jpg')
-image_gray = cv2.imread('Sketch/dori.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('Sketch/1.jpg')
+image_gray = cv2.imread('Sketch/1.jpg', cv2.IMREAD_GRAYSCALE)
 
 b, g, r = cv2.split(img)
 image2 = cv2.merge([r, g, b])
@@ -58,7 +58,7 @@ blur = cv2.GaussianBlur(image_gray, ksize=(5, 5), sigmaX=0)
 ret, thresh1 = cv2.threshold(blur, 127, 255, cv2.THRESH_BINARY)
 
 edged = cv2.Canny(blur, 10, 250)
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, ))
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
 closed = cv2.morphologyEx(edged, cv2.MORPH_CLOSE, kernel)
 
 contours, hierarchy = cv2.findContours(closed.copy(),cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
