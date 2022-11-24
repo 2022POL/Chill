@@ -48,8 +48,13 @@ def chooseColor(pal):
     return tuple(a)
 
 
-img = cv2.imread('Sketch/1.jpg')
-image_gray = cv2.imread('Sketch/1.jpg', cv2.IMREAD_GRAYSCALE)
+sketch = input()
+if input == '1' or 'bus' or 'flower3' or 'pengsoo' or 'turtle':
+    ext = 'jpg'
+elif input == 'Chill' or 'flower' or 'flower2' or 'pikachu' or 'pikachu2':
+    ext = 'png'
+img = cv2.imread('Sketch/'+sketch + '.' + ext)
+image_gray = cv2.imread('Sketch/'+sketch + '.' + ext, cv2.IMREAD_GRAYSCALE)
 
 b, g, r = cv2.split(img)
 image2 = cv2.merge([r, g, b])
@@ -96,6 +101,6 @@ while True:
     elif key == ord('w'):
         newVal = chooseColor('pallette/winter.jpg')
     elif key == ord('v'):
-        cv2.imwrite("result/colored.png", img)
+        cv2.imwrite("../../../Desktop/colored.png", img)
         cv2.destroyAllWindows()
         break
